@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Poppins:wght@400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ff-primary: "Poppins", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+
+  --Violet: hsl(257, 40%, 49%);
+  --Soft-Magenta: hsl(300, 69%, 71%);
+
+  --radius: 0.3rem;
+  --transition: all 0.1s linear;
+}
+
+body {
+  font-family: var(--ff-primary);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ******************** */
+
+.container {
+  background-color: var(--Violet);
+  background-image: url("../images/bg-mobile.svg");
+  background-position: top;
+  background-repeat: no-repeat;
+  max-width: 375px;
+  padding: 2rem;
+}
+
+.logo {
+  width: 8rem;
+}
+.header {
+  padding-bottom: 3rem;
+}
+
+.card {
+  text-align: center;
+}
+
+.hero-img {
+  display: block;
+  width: 100%;
+}
+
+.card-info {
+  padding-top: 3rem;
+}
+
+.card-info h1 {
+  color: white;
+}
+
+.card-info p {
+  color: white;
+  font-family: var(--ff-secondary);
+  font-weight: 00;
+  opacity: 0.9;
+  padding: 1.5rem 0.25rem;
+}
+
+.btn {
+  display: inline-block;
+  background: white;
+  color: var(--Violet);
+  padding: 0.5rem 1rem;
+  width: 60%;
+  border-radius: 1.5rem;
+  font-size: 14px;
+  transition: var(--transition);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  background: var(--Soft-Magenta);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.social {
+  padding-top: 3.5rem;
+}
+
+.icon {
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+  color: white;
+  transition: var(--transition);
+}
+.icon:hover {
+  color: var(--Soft-Magenta);
+  cursor: pointer;
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    background-color: var(--Violet);
+    background-image: url("../images/bg-desktop.svg");
+    background-size: contain;
+
+    /* background-position: top -200px left 150px; */
+
+    background-repeat: no-repeat;
+    max-width: 768px;
+    padding: 2rem;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "a b"
+      "c c";
+  }
+
+  .card-info {
+    text-align: start;
+    padding-left: 2rem;
+    padding-top: 1rem;
+  }
+
+  .card-info p {
+    font-size: 10px;
+    padding: 1rem 0;
+  }
+
+  .social {
+    padding-top: 0;
+  }
+
+  .btn {
+    text-align: center;
+    width: 40%;
+    padding: 0.4rem 0.8rem;
+    font-size: 12px;
+  }
+
+  .social {
+    grid-area: c;
+    justify-self: end;
+  }
+}
